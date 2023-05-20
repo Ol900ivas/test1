@@ -1,10 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
-
 import SharedLayout from './components/SharedLayout/SharedLayout';
 
-import { Route, Routes } from 'react-router-dom';
 const Home = lazy(() => import('./pages/Home'));
 const Tweets = lazy(() => import('./pages/Tweets'));
 const NotFound = lazy(() => import('./components/NotFound/NotFound'));
