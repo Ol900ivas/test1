@@ -1,12 +1,12 @@
-import { useSelector } from "react-redux";
-import { TweetCard } from "../TweetCard/TweetCard";
-import { Ul, Li } from "./CardList.styled";
-import { useState } from "react";
+import { useSelector } from 'react-redux';
+import { TweetCard } from '../TweetCard/TweetCard';
+import { Ul, Li } from './CardList.styled';
+import { useState } from 'react';
 // import { useState } from "react";
-const tweetsPerPage = 4;
+const tweetsPerPage = 3;
 export const Cardlist = () => {
-  const { items } = useSelector((state) => state.tweets);
-  const { page } = useSelector((state) => state.tweets);
+  const { items } = useSelector(state => state.tweets);
+  const { page } = useSelector(state => state.tweets);
   // const [page, setPage] = useState(1);
   // const [loading, setLoading] = useState(false);
   //   const filter = useSelector((state) => state.filter);
@@ -56,16 +56,17 @@ export const Cardlist = () => {
   return (
     <>
       <Ul>
-        {items?.slice(0, next)?.map((item) => {
+        {items?.slice(0, next)?.map(item => {
           return (
             <Li key={item.id}>
               <TweetCard
-                id={item.id}
-                user={item.user}
-                tweets={item.tweets}
-                followers={item.followers}
-                avatar={item.avatar}
-                following={item.following}
+                item={item}
+                // id={item.id}
+                // user={item.user}
+                // tweets={item.tweets}
+                // followers={item.followers}
+                // avatar={item.avatar}
+                // following={item.following}
               />
             </Li>
           );

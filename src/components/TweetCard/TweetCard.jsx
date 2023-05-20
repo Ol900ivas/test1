@@ -1,48 +1,30 @@
-// import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-// import { deleteContact } from "redux/contacts/contactsOperations";
-// import { RxCross2 } from "react-icons/rx";
+import { useDispatch } from 'react-redux';
+import { updateTweetAsync } from '../../redux/tweets/tweetsOperations';
+import { Button } from './TweetCard.styled';
 
-import { toggleIsFollowing } from "../../redux/tweets/tweetsOperations";
-import FollowBtn from "../FolowBtn/FolowBtn";
-import { Button } from "./TweetCard.styled";
-
-export const TweetCard = ({
-  id,
-  user,
-  tweets,
-  followers,
-  avatar,
-  isFollowing,
-}) => {
+export const TweetCard = ({ item }) => {
   const dispatch = useDispatch();
-  //   const handleClick = () => {
-  //     dispatch(deleteContact(id));
-  //   };
-  const handleToggle = () => dispatch(toggleIsFollowing(user));
+
+  const id = item.id;
+  const newData = {
+    followers: item.followers + (item.isFollowing ? -1 : 1),
+    isFollowing: !item.isFollowing,
+  };
+  const handleUpdate = () => dispatch(updateTweetAsync({ id, newData }));
 
   return (
     <>
-      <p>name: {user}</p>
-      <p>tweets: {tweets}</p>
-      <p>followers: {followers.toLocaleString("en-US")}</p>
-      <img src={avatar} alt="Avatar" />
+      <p>name: {item.user}</p>
+      <p>tweets: {item.tweets}</p>
+      <p>followers: {item.followers.toLocaleString('en-US')}</p>
+      <img src={item.avatar} alt="Avatar" />
 
       <Button
-        onClick={handleToggle}
-        style={{ backgroundColor: isFollowing ? "green" : "yellow" }}
+        onClick={handleUpdate}
+        style={{ backgroundColor: item.isFollowing ? 'green' : 'yellow' }}
       >
-        {/* <Button onClick={handleClick}> */}
-        {/* <RxCross2 size="20px" /> */}
-        {isFollowing ? "Following" : "Follow"}
+        {item.isFollowing ? 'Following' : 'Follow'}
       </Button>
-      <FollowBtn followers={followers} />
     </>
   );
 };
-
-// TweetCard.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-//   number: PropTypes.string.isRequired,
-// };

@@ -1,48 +1,45 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchTweets, toggleIsFollowing } from "../tweets/tweetsOperations";
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchTweetsAsync, updateTweetAsync } from '../tweets/tweetsOperations';
 
-const handlePending = (state) => {
+const handlePending = state => {
   state.isLoading = true;
+};
+
+const handleFullfiled = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
+  state.items = action.payload;
 };
 
 const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };
-// const onLoadMore = (state) => {
-//   state.page += 1;
-// };
 
 const tweetsSlice = createSlice({
-  name: "tweets",
+  name: 'tweets',
   initialState: {
     items: [],
     isLoading: false,
     error: null,
     page: 1,
+    isFollowing: false,
   },
 
-  extraReducers: {
-    [fetchTweets.pending]: handlePending,
-    [fetchTweets.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.items = action.payload;
-    },
-    [fetchTweets.rejected]: handleRejected,
-
-    [toggleIsFollowing.pending]: handlePending,
-    [toggleIsFollowing.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      // const index = state.items.findIndex(
-      //   (item) => item.id === action.payload.id
-      // );
-      state.items.push(action.payload);
-    },
-    [toggleIsFollowing.rejected]: handleRejected,
+  extraReducers: builder => {
+    builder
+      .addCase(fetchTweetsAsync.pending, handlePending)
+      .addCase(fetchTweetsAsync.fulfilled, handleFullfiled)
+      .addCase(fetchTweetsAsync.rejected, handleRejected)
+      .addCase(updateTweetAsync.pending, handlePending)
+      .addCase(updateTweetAsync.fulfilled, (state, action) => {
+        state.items = state.items.map(item =>
+          item.id === action.payload.id ? action.payload : item
+        );
+        state.isLoading = false;
+      })
+      .addCase(updateTweetAsync.rejected, handleRejected);
   },
 });
 
-// export const { addContact, deleteContact } = contactsSlice.actions;
 export const tweetsReducer = tweetsSlice.reducer;
