@@ -27,8 +27,8 @@ const Tweets = () => {
         </StyledLink>
       </Div>
 
-      {isLoading && !error && <Loader />}
       <Cardlist />
+      {isLoading && !error && <Loader />}
       <Toaster
         toastOptions={{
           style: {
