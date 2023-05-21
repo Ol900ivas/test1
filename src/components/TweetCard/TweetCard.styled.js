@@ -1,28 +1,54 @@
 import styled from '@emotion/styled';
 
 export const Card = styled.div`
+  position: relative;
   height: 460px;
   width: 380px;
   justify-content: center;
   border: none;
   border-radius: 20px;
-  background-color: #5736a3;
-  position: relative;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 `;
 
 export const Button = styled.button`
 padding-top: 14px;
 padding-bottom: 14px;
-  width: 196px;
-  border-radius: 10px;
-  transition: transform 300ms ease-in-out;
+width: 196px;
+border: none;
+cursor: pointer;
+border-radius: 10px;
+font-weight: 600;
+font-size: 18px;
+line-height: 1,2;
+color: var(--dark-text-color);
+text-transform: uppercase;
+box-shadow: var(--btn-shadow);
+transition: transform 300ms ease-in-out;
 &:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
+`;
+
+export const ImgWrap = styled.div`
+  height: 218px;
+  position: relative;
+  ::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: #ebd8ff;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
+      inset 0px -1.71846px 3.43693px #ae7be3,
+      inset 0px 3.43693px 2.5777px #fbf8ff;
+  }
 `;
 
 export const AvatarWrap = styled.div`
   position: absolute;
-
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
   z-index: 2;
@@ -42,6 +68,31 @@ export const Avatar = styled.img`
   width: 62px;
   height: 62px;
   border-radius: 50%;
+`;
+
+export const InfoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 62px 16px 36px;
+  align-items: center;
+`;
+
+export const InfoTweets = styled.p`
+  color: var(--light-text-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+`;
+
+export const InfoFollowers = styled.p`
+  color: var(--light-text-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 26px;
 `;
 
 // display: flex;
@@ -69,45 +120,14 @@ export const Avatar = styled.img`
 //   filter: drop-shadow(0 0 20px #646cffaa);
 //   animation: rotate infinite 1s linear;
 // }
-
-// .imgContainer {
-//   height: 218px;
-//   position: relative;
-// }
-
-// .imgContainer::after {
-//   content: "";
-//   position: absolute;
-//   bottom: -4px;
-//   left: 0;
-//   width: 100%;
-//   height: 8px;
-//   background: #ebd8ff;
-//   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
-//     inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
-// }
-
-// .logo {
-//   position: absolute;
-//   top: 20px;
-//   left: 20px;
-// }
-
-// .picture {
-//   margin: 28px 36px 16px;
-// }
-
-// @keyframes rotate {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   50% {
-//     transform: rotate(10deg);
-//   }
-//   100% {
-//     transform: rotate(0deg);
-//   }
-// }
+export const Logo = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+`;
+export const Picture = styled.img`
+  margin: 28px 36px 16px;
+`;
 
 // .userAvatarContainer {
 //   position: absolute;
@@ -132,10 +152,7 @@ export const Avatar = styled.img`
 // }
 
 // .userInfo {
-//   display: flex;
-//   flex-direction: column;
-//   padding: 62px 16px 36px;
-//   align-items: center;
+//
 // }
 
 // .userTweets {

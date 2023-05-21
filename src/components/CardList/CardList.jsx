@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 import { TweetCard } from '../TweetCard/TweetCard';
-import { Ul, Li } from './CardList.styled';
+import { Ul, Li, Btn } from './CardList.styled';
 import { useState } from 'react';
+
 // import { useState } from "react";
 const tweetsPerPage = 3;
 export const Cardlist = () => {
@@ -26,55 +27,18 @@ export const Cardlist = () => {
   const handleMoreTweets = () => {
     setNext(next + tweetsPerPage);
   };
-
-  //   return (
-  //     <>
-  //       <Ul>
-  //         {/* {filteredContacts.map((contact) => { */}
-  //         {items.map((item) => {
-  //           return (
-  //             <Li key={item.id}>
-  //               <TweetCard
-  //                 id={item.id}
-  //                 user={item.user}
-  //                 tweets={item.tweets}
-  //                 followers={item.followers}
-  //                 avatar={item.avatar}
-  //               />
-  //             </Li>
-  //           );
-  //         })}
-  //       </Ul>
-  //       <button type="button">
-  //         {/* onClick={() => onLoadMore()} */}
-  //         Load more
-  //       </button>
-  //     </>
-  //   );
-  // };
-
   return (
     <>
       <Ul>
         {items?.slice(0, next)?.map(item => {
           return (
             <Li key={item.id}>
-              <TweetCard
-                item={item}
-                // id={item.id}
-                // user={item.user}
-                // tweets={item.tweets}
-                // followers={item.followers}
-                // avatar={item.avatar}
-                // following={item.following}
-              />
+              <TweetCard item={item} />
             </Li>
           );
         })}
       </Ul>
-      {next < items?.length && (
-        <button onClick={handleMoreTweets}>Load more</button>
-      )}
+      {next < items?.length && <Btn onClick={handleMoreTweets}>Load more</Btn>}
     </>
   );
 };

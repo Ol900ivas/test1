@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
 `;
+// background-color: #766a92;
 
 export const Header = styled.header`
   z-index: 1100;
@@ -33,18 +34,17 @@ export const Logo = styled.div`
   align-items: center;
   font-weight: 700;
   margin: 0;
+  padding-left: 8px;
 `;
 
-export const LogoName = styled.span`
-  text-transform: uppercase;
+export const LogoName = styled.span``;
+
+export const LogoImg = styled.img`
+  width: 60px;
 `;
 
-export const Link = styled(NavLink)`
-  padding: 8px 16px;
-  border-radius: 4px;
+export const LinkLogo = styled(Link)`
   text-decoration: none;
-  color: black;
-  font-weight: 500;
 
   &.active {
     color: white;
@@ -52,4 +52,16 @@ export const Link = styled(NavLink)`
   }
 `;
 
-// border-bottom: 1px solid black;
+export const LinkNav = styled(NavLink)`
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--dark-text-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  // box-shadow: var(--btn-shadow);
+  &.active {
+    color: var(--light-text-color);
+    background: var(--card-bg);
+  }
+`;

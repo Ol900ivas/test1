@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+  display: flex;
+}
+
+img {
+  display: block;
+  /* width: 100%;
+  max-width: 100%;
+  height: auto; */
+}
+
+:root {
+  --main-bg-color: #ffffff;
+  --second-bg-color: #766a92;
+  --card-bg: linear-gradient(
+    114.99deg,
+    #471ca9 -0.99%,
+    #5736a3 54.28%,
+    #4b2a99 78.99%
+  );
+  --card-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
+  --btn-bg-color: #ebd8ff;
+  --btn-bg-color-active: #5cd3a8;
+  --btn-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  --dark-text-color: #373737;
+  --light-text-color: #ebd8ff;
+}
