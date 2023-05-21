@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
 export const Card = styled.div`
-  position: relative;
+  // position: relative;
   height: 460px;
   width: 380px;
-  justify-content: center;
+  // justify-content: center;
   border: none;
   border-radius: 20px;
   background: var(--card-bg);
@@ -14,13 +14,14 @@ export const Card = styled.div`
 export const ImgWrap = styled.div`
   height: 218px;
   position: relative;
+  top: 0;
   ::after {
     content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
     width: 100%;
     height: 8px;
+    position: absolute;
+    bottom: 28px;
+    left: 0;
     background: #ebd8ff;
     box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
       inset 0px -1.71846px 3.43693px #ae7be3,
@@ -30,7 +31,7 @@ export const ImgWrap = styled.div`
 
 export const Logo = styled.img`
   position: absolute;
-  top: 20px;
+  top: -10px;
   left: 20px;
 `;
 
@@ -40,20 +41,20 @@ export const Picture = styled.img`
 
 export const AvatarWrap = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 28px;
   left: 50%;
   transform: translate(-50%, 50%);
-  z-index: 2;
+  z-index: 5;
   width: 80px;
   height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #ebd8ff;
   box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
     inset 0px -2.19582px 4.39163px #ae7be3,
     inset 0px 4.39163px 3.29372px #fbf8ff;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const Avatar = styled.img`
@@ -65,7 +66,7 @@ export const Avatar = styled.img`
 export const InfoWrap = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 62px 16px 36px;
+  padding: 36px 16px 36px;
   align-items: center;
 `;
 
