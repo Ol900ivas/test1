@@ -28,6 +28,7 @@ width: 196px;
 border: none;
 cursor: pointer;
 border-radius: 10px;
+font-family: Montserrat;
 font-weight: 600;
 font-size: 18px;
 line-height: 1,2;
