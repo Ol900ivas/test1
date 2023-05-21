@@ -7,14 +7,10 @@ export const Ul = styled.ul`
   flex-wrap: wrap;
   gap: 16px;
   padding: 0;
-
   margin-bottom: 40px;
 `;
 
 export const Li = styled.li`
-  // padding-left: 8px;
-  // padding-right: 8px;
-  // gap: 40px;
   align-items: center;
   justify-content: space-between;
 `;

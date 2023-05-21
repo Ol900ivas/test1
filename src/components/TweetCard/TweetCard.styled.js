@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Card = styled.div`
-  // position: relative;
   height: 460px;
   width: 380px;
-  // justify-content: center;
   border: none;
   border-radius: 20px;
   background: var(--card-bg);

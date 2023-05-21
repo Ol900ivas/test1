@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 
 export const HeroWrap = styled.div`
   max-width: 1200px;
-  //   height: 700px;
   background: url(${hero}), var(--card-bg);
   padding-bottom: 600px;
   padding-top: 100px;
   display: flex;
   border-radius: 20px;
-  //   align-items: center;
   justify-content: center;
   box-shadow: var(--card-shadow);
 `;

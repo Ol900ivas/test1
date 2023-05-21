@@ -29,7 +29,6 @@ export const TweetCard = ({ item }) => {
   return (
     <Card>
       <ImgWrap>
-        {/* <p>name: {item.user}</p> */}
         <Logo src={`${logo}`} alt="logo" />
         <Picture src={`${picture}`} alt="picture" />
 

@@ -6,7 +6,6 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 16px;
 `;
-// background-color: #766a92;
 
 export const Header = styled.header`
   z-index: 1100;
@@ -24,9 +23,6 @@ export const Header = styled.header`
     display: flex;
   }
 `;
-//  border-bottom: 1px solid black;
-// box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-//     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 
 export const Logo = styled.div`
   display: flex;
@@ -65,7 +61,6 @@ export const LinkNav = styled(NavLink)`
   color: var(--dark-text-color);
   font-weight: 500;
   text-transform: uppercase;
-  // box-shadow: var(--btn-shadow);
   transition: box-shadow 300ms ease-in-out;
   &:hover {
     box-shadow: var(--btn-shadow);
