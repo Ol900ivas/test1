@@ -15,7 +15,7 @@ export const Header = styled.header`
   justify-content: space-between;
   gap: 12px;
   padding: 8px 0;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
 
   box-shadow: 0 5px 4px -4px rgba(0, 0, 0, 0.3),
     0px 1px 1px -4px rgba(0, 0, 0, 0.14);
@@ -37,7 +37,11 @@ export const Logo = styled.div`
   padding-left: 8px;
 `;
 
-export const LogoName = styled.span``;
+export const LogoName = styled.span`
+  text-decoration: none;
+  color: var(--dark-text-color);
+  font-size: 20px;
+`;
 
 export const LogoImg = styled.img`
   width: 60px;
@@ -51,7 +55,9 @@ export const LinkLogo = styled(Link)`
     background-color: #336fb3df;
   }
 `;
-
+export const Nav = styled.nav`
+  gap: 8px;
+`;
 export const LinkNav = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;
@@ -60,6 +66,10 @@ export const LinkNav = styled(NavLink)`
   font-weight: 500;
   text-transform: uppercase;
   // box-shadow: var(--btn-shadow);
+  transition: box-shadow 300ms ease-in-out;
+  &:hover {
+    box-shadow: var(--btn-shadow);
+  }
   &.active {
     color: var(--light-text-color);
     background: var(--card-bg);

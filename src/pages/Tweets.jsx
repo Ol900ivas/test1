@@ -4,8 +4,6 @@ import { selectError, selectIsLoading } from '../redux/tweets/tweetsSelectors';
 import { fetchTweetsAsync } from '../redux/tweets/tweetsOperations';
 import { Toaster } from 'react-hot-toast';
 import { Cardlist } from '../components/CardList/CardList';
-import { BsArrowLeft } from 'react-icons/bs';
-import { Div, StyledLink, Span } from '../components/NotFound/NotFound.styled';
 import Loader from 'components/Loader/Loader';
 
 const Tweets = () => {
@@ -19,14 +17,6 @@ const Tweets = () => {
 
   return (
     <>
-      <h1>Tweets</h1>
-
-      {/* <Div>
-        <StyledLink to="/">
-          <BsArrowLeft size={20} />
-          <Span> Back</Span>
-        </StyledLink>
-      </Div> */}
       <Cardlist />
       {isLoading && !error && <Loader />}
       <Toaster

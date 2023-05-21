@@ -12,21 +12,22 @@ export const Card = styled.div`
 `;
 
 export const Button = styled.button`
-padding-top: 14px;
-padding-bottom: 14px;
-width: 196px;
-border: none;
-cursor: pointer;
-border-radius: 10px;
-font-weight: 600;
-font-size: 18px;
-line-height: 1,2;
-color: var(--dark-text-color);
-text-transform: uppercase;
-box-shadow: var(--btn-shadow);
-transition: transform 300ms ease-in-out;
-&:hover {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  width: 196px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1, 2;
+  color: var(--dark-text-color);
+  text-transform: uppercase;
+  box-shadow: var(--btn-shadow);
+  transition: transform 300ms ease-in-out;
+  &:hover {
     transform: scale(1.05);
+  }
 `;
 
 export const ImgWrap = styled.div`

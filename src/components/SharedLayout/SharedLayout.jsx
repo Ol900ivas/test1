@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import Loader from '../Loader/Loader';
-import logo from '../../images/logo.svg';
+import logo_test from '../../images/logo_test.png';
 
 import {
   Container,
@@ -11,6 +11,7 @@ import {
   LinkNav,
   LogoImg,
   LinkLogo,
+  Nav,
 } from './SharedLayout.styled';
 
 const SharedLayout = () => {
@@ -19,14 +20,14 @@ const SharedLayout = () => {
       <Header>
         <LinkLogo to="/">
           <Logo>
-            <LogoImg src={logo} alt="Logo" size={20} />
+            <LogoImg src={logo_test} alt="Logo" size={20} />
             <LogoName>TweetNet</LogoName>
           </Logo>
         </LinkLogo>
-        <nav>
+        <Nav>
           <LinkNav to="/">Home</LinkNav>
           <LinkNav to="/tweets">Tweets</LinkNav>
-        </nav>
+        </Nav>
       </Header>
       <main>
         <Suspense fallback={<Loader />}>

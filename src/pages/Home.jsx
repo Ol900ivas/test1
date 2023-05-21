@@ -1,4 +1,10 @@
+import { Hero } from 'components/Hero/Hero';
+
 const Home = () => {
-  return <h1>Wellcome to TweetNet!</h1>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 export default Home;
