@@ -11,26 +11,6 @@ export const Card = styled.div`
   box-shadow: var(--card-shadow);
 `;
 
-export const Button = styled.button`
-  padding-top: 14px;
-  padding-bottom: 14px;
-  width: 196px;
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1, 2;
-  color: var(--dark-text-color);
-  text-transform: uppercase;
-  box-shadow: var(--btn-shadow);
-  transition: transform 300ms ease-in-out;
-  &:hover {
-    transform: scale(1.05);
-  }
-`;
-
 export const ImgWrap = styled.div`
   height: 218px;
   position: relative;
@@ -46,6 +26,16 @@ export const ImgWrap = styled.div`
       inset 0px -1.71846px 3.43693px #ae7be3,
       inset 0px 3.43693px 2.5777px #fbf8ff;
   }
+`;
+
+export const Logo = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+`;
+
+export const Picture = styled.img`
+  margin: 28px 36px 16px;
 `;
 
 export const AvatarWrap = styled.div`
@@ -97,12 +87,22 @@ export const InfoFollowers = styled.p`
   margin-bottom: 26px;
 `;
 
-export const Logo = styled.img`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-`;
-
-export const Picture = styled.img`
-  margin: 28px 36px 16px;
+export const Button = styled.button`
+  padding-top: 14px;
+  padding-bottom: 14px;
+  width: 196px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1, 2;
+  color: var(--dark-text-color);
+  text-transform: uppercase;
+  box-shadow: var(--btn-shadow);
+  transition: transform 300ms ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
